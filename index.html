@@ -31,25 +31,10 @@
       cursor: pointer;
     }
 
-    .meow-message {
+    .cat-face {
       text-align: center;
-      font-size: 1.2em;
+      font-size: 2em;
       margin-top: 10px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    @keyframes rotateAnim {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .rotate {
-      animation: rotateAnim 1s linear;
     }
     button {
       padding: 10px 20px;
@@ -80,7 +65,7 @@
     src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif"
     alt="Animated GIF"
   />
-  <div id="meowMessage" class="meow-message">Meow!</div>
+  <div id="catFace" class="cat-face">ฅ^•ﻌ•^ฅ</div>
 
   <script>
     function toggleContent() {
@@ -89,14 +74,12 @@
     }
 
     const catGif = document.getElementById("catGif");
-    const meowMessage = document.getElementById("meowMessage");
+    const catFace = document.getElementById("catFace");
+    const expressions = ["ฅ^•ﻌ•^ฅ", "ฅ^•ω•^ฅ ✨", "ฅ♡ω♡ฅ", "ฅ-ᆽ-ฅ zZ"];
+    let current = 0;
     catGif.addEventListener("click", () => {
-      catGif.classList.add("rotate");
-      meowMessage.style.opacity = "1";
-      setTimeout(() => {
-        catGif.classList.remove("rotate");
-        meowMessage.style.opacity = "0";
-      }, 1000);
+      current = (current + 1) % expressions.length;
+      catFace.innerText = expressions[current];
     });
   </script>
 </body>
