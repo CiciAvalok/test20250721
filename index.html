@@ -28,28 +28,6 @@
       width: 100%;
       max-width: 400px;
       margin-top: 20px;
-      cursor: pointer;
-    }
-
-    .meow-message {
-      text-align: center;
-      font-size: 1.2em;
-      margin-top: 10px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    @keyframes rotateAnim {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .rotate {
-      animation: rotateAnim 1s linear;
     }
     button {
       padding: 10px 20px;
@@ -74,30 +52,13 @@
     </div>
   </div>
 
-  <img
-    id="catGif"
-    class="gif"
-    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif"
-    alt="Animated GIF"
-  />
-  <div id="meowMessage" class="meow-message">Meow!</div>
+  <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif" alt="Animated GIF" />
 
   <script>
     function toggleContent() {
       const content = document.getElementById("contentBox");
       content.style.display = content.style.display === "none" ? "block" : "none";
     }
-
-    const catGif = document.getElementById("catGif");
-    const meowMessage = document.getElementById("meowMessage");
-    catGif.addEventListener("click", () => {
-      catGif.classList.add("rotate");
-      meowMessage.style.opacity = "1";
-      setTimeout(() => {
-        catGif.classList.remove("rotate");
-        meowMessage.style.opacity = "0";
-      }, 1000);
-    });
   </script>
 </body>
 </html>
