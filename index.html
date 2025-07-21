@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .toggle-section {
+      margin-top: 20px;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e0f7fa;
+      border-left: 4px solid #00acc1;
+    }
+    .gif {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #00acc1;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #008b9a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Interactive Site</h1>
+
+  <div class="toggle-section">
+    <button onclick="toggleContent()">Click to Expand</button>
+    <div class="content" id="contentBox">
+      <p>This is the hidden content that gets revealed when you click the button!</p>
+    </div>
+  </div>
+
+  <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif" alt="Animated GIF" />
+
+  <script>
+    function toggleContent() {
+      const content = document.getElementById("contentBox");
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
