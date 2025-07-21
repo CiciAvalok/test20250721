@@ -28,6 +28,13 @@
       width: 100%;
       max-width: 400px;
       margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .cat-face {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 10px;
     }
     button {
       padding: 10px 20px;
@@ -52,13 +59,28 @@
     </div>
   </div>
 
-  <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif" alt="Animated GIF" />
+  <img
+    id="catGif"
+    class="gif"
+    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJpOWduYnF3bTl5YXc3d29oMGZldm4zZnlqYzJrM2Q1aWdvc3dhZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif"
+    alt="Animated GIF"
+  />
+  <div id="catFace" class="cat-face">ฅ^•ﻌ•^ฅ</div>
 
   <script>
     function toggleContent() {
       const content = document.getElementById("contentBox");
       content.style.display = content.style.display === "none" ? "block" : "none";
     }
+
+    const catGif = document.getElementById("catGif");
+    const catFace = document.getElementById("catFace");
+    const expressions = ["ฅ^•ﻌ•^ฅ", "ฅ^•ω•^ฅ ✨", "ฅ♡ω♡ฅ", "ฅ-ᆽ-ฅ zZ"];
+    let current = 0;
+    catGif.addEventListener("click", () => {
+      current = (current + 1) % expressions.length;
+      catFace.innerText = expressions[current];
+    });
   </script>
 </body>
 </html>
